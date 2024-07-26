@@ -1,15 +1,18 @@
 function findFirstDuplicate(arr) {
   // type your code here
-  let newArr = new Set();
+  let newArr = new Set(); // initialize an empty array newArray
 
-  for (let num of arr ) {
-    if (newArr.has(num)) {
-        return num;
+  for (let num of arr ) { //interate through each element in the input array
+    if (newArr.has(num)) { // check if that element exists in the newArray
+        return num; // if it does, return it
+
     }
-    newArr.add(num);
+    newArr.add(num); // if not, append it to the array
+
 
   }
-  return -1;
+  return -1; // if nothing gets returned by the end of the array return -1
+
 }
 
 if (require.main === module) {
@@ -31,11 +34,11 @@ if (require.main === module) {
 module.exports = findFirstDuplicate;
 
 // Please add your pseudocode to this file
-// initialize an empty array newArray
-// interate through each element in the input array
-// check if that element exists in the newArray
-// if not, append it to the array
-// if it does, return it
-// if nothing gets returned by the end of the array return -1
+
 
 // And a written explanation of your solution
+// Initialization: We use a Set called newArr to keep track of numbers we've already encountered. A Set is chosen because it provides average O(1) time complexity for both lookups and insertions.
+// Iteration: We loop through each number in the array:
+// If the number is already present in the newArr set, it is the first duplicate and is immediately returned.
+// If not, the number is added to the newArr set.
+// Final Check: If the loop completes without finding any duplicates, -1 is returned indicating no duplicates were found.
